@@ -1,35 +1,37 @@
 import React, { useState } from "react";
 
-const Counter = () => {
-  const [count, setCount] = useState(0); //useState can contain [],{},[{}]
+const Counter = (props) => {
+  console.log(props);
+  const [value, setValue] = useState(props.value); //useState can contain [],{},[{}]
 
-  const formatCount = () => {
-    return count === 0 ? "Empty" : count;
+  const formatValue = () => {
+    return value === 0 ? "Empty" : value;
   };
 
   const getBadgeClasses = () => {
     let classes = "badge m-2 ";
-    classes += count === 0 ? "bg-warning" : "bg-primary";
+    classes += value === 0 ? "bg-warning" : "bg-primary";
     return classes;
   };
 
   const handleIncrement = () => {
-    setCount((prevState) => prevState + 1);
+    setValue((prevState) => prevState + 1);
   };
   const handleDecrement = () => {
-    setCount((prevState) => prevState - 1);
+    setValue((prevState) => prevState - 1);
   };
 
   return (
-    <>
-      <span className={getBadgeClasses()}>{formatCount()}</span>
+    <div>
+      {props.children}
+      <span className={getBadgeClasses()}>{formatValue()}</span>
       <button className="btn btn-primary btn-sm m-2" onClick={handleIncrement}>
         +
       </button>
       <button className="btn btn-primary btn-sm m-2" onClick={handleDecrement}>
         -
       </button>
-    </>
+    </div>
   );
 };
 
