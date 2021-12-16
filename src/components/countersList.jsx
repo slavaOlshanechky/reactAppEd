@@ -13,9 +13,7 @@ const CountersList = () => {
   return (
     <>
       {counters.map((count) => (
-        <Counter key={count.id} value={count.value}>
-          <span>{count.name}</span>
-        </Counter>
+        <Counter key={count.id} value={count.value} name={count.name}></Counter>
       ))}
     </>
   );
