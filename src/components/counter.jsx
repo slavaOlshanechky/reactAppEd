@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Counter = (props) => {
-  console.log(props);
+  // console.log(props);
   const [value, setValue] = useState(props.value); //useState can contain [],{},[{}]
 
   const formatValue = () => {
@@ -30,6 +30,9 @@ const Counter = (props) => {
       </button>
       <button className="btn btn-primary btn-sm m-2" onClick={handleDecrement}>
         -
+      </button>{" "}
+      <button className="btn btn-danger btn-sm m-2" onClick={props.onDelete}>
+        Delete
       </button>
     </div>
   );
