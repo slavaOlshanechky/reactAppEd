@@ -10,8 +10,10 @@ const CountersList = () => {
     { id: 4, value: 0, name: "Set of the minimalist" },
   ]);
 
-  const handleDelete = () => {
-    console.log("handleDelete");
+  const handleDelete = (id) => {
+    // console.log("handleDeleteID: ", id);
+    const newCounters = counters.filter((c) => c.id !== id);
+    setCounters(newCounters);
   };
 
   return (
