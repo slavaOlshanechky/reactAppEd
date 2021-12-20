@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Counter = (props) => {
-  // console.log(props);
-
   //child component shouldn't has his own state
   // const [value, setValue] = useState(props.value); //useState can contain [],{},[{}]
   const { value } = props;
@@ -28,7 +26,7 @@ const Counter = (props) => {
       </button>
       <button
         className="btn btn-primary btn-sm m-2"
-        onClick={() => props.onDecrement()}
+        onClick={() => props.onDecrement(props.id)}
       >
         -
       </button>{" "}
