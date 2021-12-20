@@ -22,7 +22,7 @@ const Counter = (props) => {
       <span className={getBadgeClasses()}>{formatValue()}</span>
       <button
         className="btn btn-primary btn-sm m-2"
-        onClick={() => props.onIncrement(props.value)}
+        onClick={() => props.onIncrement(props.id)}
       >
         +
       </button>
